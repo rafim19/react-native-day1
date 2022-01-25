@@ -16,15 +16,17 @@ const TodoListScreen = () => {
     setTodos(dummyTodos)
   }
 
-  const navigateToDetailTodoScreen = () => {
-    navigation.navigate("DetailTodoScreen")
+  const navigateToDetailTodoScreen = (item: ITodoListItem) => {
+    navigation.navigate("DetailTodoScreen", {
+      item: item
+    })
   }
 
   // function untuk menentukan styling setiap item di dalam ITodoListItem
   const renderTodoItem = (renderItemInfo: ListRenderItemInfo<ITodoListItem>) => {
     const { item, index } = renderItemInfo;
     return (
-      <TouchableOpacity onPress={() => navigateToDetailTodoScreen()}>
+      <TouchableOpacity onPress={() => navigateToDetailTodoScreen(item)}>
         <View style={styles.item}>
           <Text>{item.id}</Text>
           <Text>{item.title}</Text>

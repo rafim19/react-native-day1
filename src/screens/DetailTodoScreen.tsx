@@ -5,14 +5,14 @@ import { RootStackParamList } from '../navigation/RootStackParamList';
 
 const DetailTodoScreen = () => {
   // Agar bisa menerima parameter yang dikirim
-  // const route = useRoute<RouteProp<RootStackParamList, "DetailTodoScreen">>();
-  // const { id, title, description } = route.params.item;
+  const route = useRoute<RouteProp<RootStackParamList, "DetailTodoScreen">>();
+  const { id, title, description } = route.params.item;
 
   return (  
     <View> 
-      <Text>ID: abc</Text>
-      <Text>Title: title</Text>
-      <Text>Description: safwfsdafa</Text>
+      <Text>ID: {id}</Text>
+      <Text>Title: {title}</Text>
+      <Text>Description: {description}</Text>
     </View>
   );
 };
